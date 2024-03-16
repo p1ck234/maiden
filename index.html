@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Моя?</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1>Для начало тебе нужно зайти!</h1>
+      <p class="main__text">Угадаешь пароль?</p>
+      <input
+        id="authField"
+        type="password"
+        class="main__input"
+        placeholder="PIN"
+      />
+      <input
+        style="display: none"
+        type="button"
+        id="authButton"
+        value="Войти"
+        onclick="auth()"
+      />
+      <a target="_blank" class="main__link" href="https://t.me/p1ck23"
+        >Помощь</a
+      >
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
