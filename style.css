@@ -53,6 +53,7 @@ button {
   padding: 10px;
 }
 .main__button {
+  color: black;
   font-size: 36px;
   margin-top: 70px;
   position: absolute;
