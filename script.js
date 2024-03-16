@@ -16,12 +16,14 @@ const renderQust = () => {
     const rand = min + Math.random() * (max - min + 1);
     return Math.floor(rand);
   };
-  const authHtml = `<h1 class="main__title">Будешь моей <span style="color: transparent;">женой</span>?</h1>
-    <img src="./src/img/wait__answr.gif" alt="" />
-    <div class="main__box">
-      <button id="btnYes" class="main__button">Да</button>
-      <button id="btnNo" class="main__button">Нет</button>
-    </div>`;
+  const authHtml = `<h1 class="main__title">
+  Будешь моей <span style="color: transparent">женой</span>?
+</h1>
+<img class="main__img" src="./src/img/wait__answr.gif" alt="" />
+<div class="main__box">
+  <button id="btnYes" class="main__button">Да</button>
+  <button id="btnNo" class="main__button">Нет</button>
+</div>`;
   mainElement.innerHTML = authHtml;
 
   const buttonNoElement = document.querySelector("#btnNo");
@@ -41,18 +43,18 @@ const renderQust = () => {
 };
 
 const renderYes = () => {
-  const authHtml = `<main class="main">
+  const authHtml = `
   <h1 class="main__title">Ура!</h1>
-  <img src="./src/img/btn__yes.gif" alt="" /> 
-</main>`;
+  <img class="main__img" src="./src/img/btn__yes.gif" alt="" /> 
+`;
   mainElement.innerHTML = authHtml;
 };
 
 const renderNo = () => {
-  const authHtml = ` <main class="main">
+  const authHtml = `
     <h1 class="main__title">Окак</h1>
-    <img src="./src/img/btn__no.gif" alt="" /> 
-  </main>`;
+    <img class="main__img" src="./src/img/btn__no.gif" alt="" /> 
+  `;
   mainElement.innerHTML = authHtml;
 };
 const mainElement = document.querySelector(".main");

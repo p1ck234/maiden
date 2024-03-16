@@ -66,4 +66,44 @@ body {
   transition: 0.5s;
   background-color: #f7e8e5;
   cursor: pointer;
+}
+
+@media (min-width: 424px) and (max-width: 938px) {
+  .main__title {
+    font-size: 30px;
+  }
+  .main__text {
+    font-size: 22px;
+  }
+  .main__input {
+    width: 400px;
+  }
+  .main__img {
+    width: 420px;
+    height: 420px;
+  }
+  .main__button {
+    position: relative;
+    margin-right: 10px;
+  }
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  .main__title {
+    font-size: 22px;
+  }
+  .main__text {
+    font-size: 16px;
+  }
+  .main__input {
+    width: 300px;
+  }
+  .main__img {
+    width: 320px;
+    height: 320px;
+  }
+  .main__button {
+    width: 100px;
+    position: relative;
+    margin-right: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */

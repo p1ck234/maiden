@@ -67,3 +67,46 @@ body {
     }
   }
 }
+@media (min-width: 424px) and (max-width: 938px) {
+  .main {
+    &__title {
+      font-size: 30px;
+    }
+    &__text {
+      font-size: 22px;
+    }
+    &__input {
+      width: 400px;
+    }
+    &__img {
+      width: 420px;
+      height: 420px;
+    }
+    &__button {
+      position: relative;
+      margin-right: 10px;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 425px) {
+  .main {
+    &__title {
+      font-size: 22px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__input {
+      width: 300px;
+    }
+    &__img {
+      width: 320px;
+      height: 320px;
+    }
+    &__button {
+      width: 100px;
+      position: relative;
+      margin-right: 10px;
+    }
+  }
+}
