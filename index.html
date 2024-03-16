@@ -15,25 +15,9 @@
   </head>
   <body>
     <main class="main">
-      <h1 class="main__title">Для начало тебе нужно зайти!</h1>
-      <p class="main__text">Угадаешь пароль?</p>
-      <input
-        id="authField"
-        type="password"
-        class="main__input"
-        placeholder="PIN"
-      />
-      <input
-      class="autnEnter"
-        style="display: none"
-        type="button"
-        id="authButton"
-        value="Войти"
-        onclick="auth()"
-      />
-      <a target="_blank" class="main__link" href="https://t.me/p1ck23"
-        >Помощь</a
-      >
+      <div id="loadingIndicator" style="display: none">
+        <img src="./src/loader.gif" alt="Загрузка..." />
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>

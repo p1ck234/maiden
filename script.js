@@ -1,3 +1,8 @@
+const mainElement = document.querySelector(".main");
+document.addEventListener("DOMContentLoaded", async () => {
+  mainElement.innerHTML = "<p>Загрузка данных...</p>";
+  await renderAuth();
+});
 const auth = () => {
   const inputElement = document.querySelector("#authField");
   const pass = "lovearina";
@@ -10,6 +15,39 @@ const auth = () => {
   }
 };
 
+const renderAuth = () => {
+  const mainElement = document.querySelector(".main");
+  const authElement = `<h1 class="main__title">Для начало тебе нужно зайти!</h1>
+  <p class="main__text">Угадаешь пароль?</p>
+  <input
+    id="authField"
+    type="password"
+    class="main__input"
+    placeholder="PIN"
+  />
+  <input
+  class="autnEnter"
+    style="display: none"
+    type="button"
+    id="authButton"
+    value="Войти"
+    onclick="auth()"
+  />
+  <a target="_blank" class="main__link" href="https://t.me/p1ck23"
+    >Помощь</a
+  >`;
+  mainElement.innerHTML = authElement;
+
+  const authField = document.querySelector("#authField");
+  const authButton = document.querySelector("#authButton");
+  authField.addEventListener("keypress", function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) {
+      authButton.click();
+    }
+  });
+};
+
 const renderQust = () => {
   const mainElement = document.querySelector(".main");
   const random = (min, max) => {
@@ -19,7 +57,8 @@ const renderQust = () => {
   const authHtml = `<h1 class="main__title">
   Будешь моей <span style="color: transparent">женой</span>?
 </h1>
-<img class="main__img" src="./src/img/wait__answr.gif" alt="" />
+<div id="loadingText" style="font-size: 32px">Загружается...</div>
+<img class="main__img" src="./src/img/wait__answr.gif" alt="main_img" onload="document.getElementById('loadingText').style.display='none';" />
 <div class="main__box">
   <button id="btnYes" class="main__button">Да</button>
   <button id="btnNo" class="main__button">Нет</button>
@@ -45,7 +84,8 @@ const renderQust = () => {
 const renderYes = () => {
   const authHtml = `
   <h1 class="main__title">Ура!</h1>
-  <img class="main__img" src="./src/img/btn__yes.gif" alt="" /> 
+  <div id="loadingText" style="font-size: 32px">Загружается...</div>
+  <img class="main__img" src="./src/img/btn__yes.gif" alt="img_yes" onload="document.getElementById('loadingText').style.display='none'";/> 
 `;
   mainElement.innerHTML = authHtml;
 };
@@ -53,17 +93,8 @@ const renderYes = () => {
 const renderNo = () => {
   const authHtml = `
     <h1 class="main__title">Окак</h1>
-    <img class="main__img" src="./src/img/btn__no.gif" alt="" /> 
+    <div id="loadingText" style="font-size: 32px">Загружается...</div>
+    <img class="main__img" src="./src/img/btn__no.gif" alt="img_no" onload="document.getElementById('loadingText').style.display='none'";/> 
   `;
   mainElement.innerHTML = authHtml;
 };
-const mainElement = document.querySelector(".main");
-const authField = document.querySelector("#authField");
-const authButton = document.querySelector("#authButton");
-
-authField.addEventListener("keypress", function (e) {
-  var key = e.which || e.keyCode;
-  if (key === 13) {
-    authButton.click();
-  }
-});
