@@ -7,11 +7,22 @@ const auth = () => {
   const inputElement = document.querySelector("#authField");
   const pass = "lovearina";
   if (inputElement.value === pass) {
-    alert("А ты молодец!\nСама догадалась?");
-    renderQust();
+    swal({
+      title: "А ты молодец!",
+      text: "Сама догадалась?",
+      icon: "success",
+      button: "Да, да я",
+    }).then(() => {
+      renderQust();
+    });
   } else {
-    alert("PIN неправильный.\nПопробуй еще раз");
-    inputElement.value = "";
+    swal({
+      title: "PIN неправильный",
+      text: "Попробуй еще раз",
+      icon: "error",
+    }).then(() => {
+      inputElement.value = "";
+    });
   }
 };
 
@@ -73,7 +84,31 @@ const renderQust = () => {
   });
 
   buttonNoElement.addEventListener("click", () => {
-    renderNo();
+    swal({
+      title: "Вопрос",
+      text: "Ты уверена? Пути обратно не будет!",
+      icon: "warning",
+      buttons: ["Нет", "Да"],
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        swal({
+          title: "Еще один вопрос",
+          text: "Ты точно, точно уверена?",
+          icon: "warning",
+          buttons: ["Нет", "Да"],
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            renderNo();
+          } else {
+            swal("Слава богу!");
+          }
+        });
+      } else {
+        swal("Попробуй снова");
+      }
+    });
   });
 
   buttonYesElement.addEventListener("click", () => {
